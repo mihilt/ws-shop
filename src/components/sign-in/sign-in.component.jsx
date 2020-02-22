@@ -3,6 +3,8 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
+import { signInWithGoogle } from '../../firebase/firebase.utils.js';
+
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component {
@@ -30,7 +32,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className='sign-in'>
-        <h2>t</h2>
+        <h2>이미 계정이 있으신가요?</h2>
         <span>이메일과 비밀번호를 입력해주세요.</span>
 
         <form onSubmit={this.handleSubmit}>
@@ -50,7 +52,15 @@ class SignIn extends React.Component {
             label='비밀번호'
             required
           />
-          <CustomButton type='submit'> 로그인 </CustomButton>
+
+          <div className = 'buttons'>          
+            <CustomButton type='submit'> 로그인 </CustomButton>
+            <CustomButton onClick = {signInWithGoogle} isGoogleSignIn>
+            구글 로그인 
+            </CustomButton>
+          </div>
+
+
         </form>
       </div>
     );
