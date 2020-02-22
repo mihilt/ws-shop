@@ -140,15 +140,15 @@ const SHOP_DATA = [
       items: [
         {
           id: 1,
-          name: '이오난사',
+          name: '테이블야자',
           imageUrl: 'https://mihilthome.files.wordpress.com/2020/02/20200221_120711.jpg',
-          price: 3800
+          price: 5800
         },
         {
           id: 2,
-          name: '테이블야자',
+          name: '이오난사',
           imageUrl: 'https://mihilthome.files.wordpress.com/2020/02/20200221_120741.jpg',
-          price: 5800
+          price: 3800
         }
         ,
         {
