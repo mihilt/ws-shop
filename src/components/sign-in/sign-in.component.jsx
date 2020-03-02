@@ -41,7 +41,7 @@ class SignIn extends React.Component {
             type='email'
             handleChange={this.handleChange}
             value={this.state.email}
-            label='아이디'
+            label='이메일'
             required
           />
           <FormInput
