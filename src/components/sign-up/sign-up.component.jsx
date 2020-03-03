@@ -29,6 +29,12 @@ class SignUp extends React.Component {
       return;
     }
 
+    console.log(password.length);
+
+    if(password.length<5 || confirmPassword.length<5){
+      alert("비밀번호를 6자리 이상으로 작성해주세요.")
+    }
+
     try {
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
@@ -99,5 +105,11 @@ class SignUp extends React.Component {
     );
   }
 }
+// 얘 비밀번호 6자리 이상 안하면 POST 400 오류 뜨면서 firebase auth/weak-password 콘솔창에 오류뜨는데 
+// 예외사항 추가하자
+
+//회원가입 완료시에 시각적 효과로 회원가입이 완료되었음을 사용자에게 알리자. 생각해보고 정 안되면  alert로 그냥 추가 ㄱㄱ
+
+//로그인 후에 메인 페이지로 넘어가던가 하는 것도 생각 
 
 export default SignUp;
