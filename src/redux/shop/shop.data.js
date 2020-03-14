@@ -1,5 +1,5 @@
-const SHOP_DATA = [
-    {
+const SHOP_DATA = {
+    cloth: {
         id: 1,
         title: '의류',
         routeName: 'cloth',
@@ -54,7 +54,7 @@ const SHOP_DATA = [
             }
         ]
     },
-    {
+    electronic: {
       id: 2,
       title: '전자기기',
       routeName: 'electronic',
@@ -100,7 +100,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    book: {
       id: 3,
       title: '책',
       routeName: 'book',
@@ -133,7 +133,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    plant: {
       id: 4,
       title: '식물',
       routeName: 'plant',
@@ -166,7 +166,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    etc: {
       id: 5,
       title: '기타',
       routeName: 'etc',
@@ -233,6 +233,6 @@ const SHOP_DATA = [
         }
       ]
     }
-]
+};
 
 export default SHOP_DATA;
