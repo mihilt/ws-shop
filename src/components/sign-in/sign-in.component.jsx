@@ -3,9 +3,13 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import { auth, signInWithGoogle } from '../../firebase/firebase.utils.js';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
-import './sign-in.styles.scss';
+import {
+  SignInContainer,
+  SignInTitle,
+  ButtonsBarContainer
+} from './sign-in.styles';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -18,14 +22,14 @@ class SignIn extends React.Component {
   }
 
   handleSubmit = async event => {
-
-    const{ email, password } = this.state;
     event.preventDefault();
-    
-    try{
-      await auth.signInWithEmailAndPassword(email,password);
-        this.setState({ email: '', password: '' });   
-    }catch(error){
+
+    const { email, password } = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      this.setState({ email: '', password: '' });
+    } catch (error) {
       console.log(error);
     }
   };
@@ -38,8 +42,8 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className='sign-in'>
-        <h2>이미 계정이 있으신가요?</h2>
+      <SignInContainer>
+        <SignInTitle>이미 계정이 있으신가요?</SignInTitle>
         <span>이메일과 비밀번호를 입력해주세요.</span>
 
         <form onSubmit={this.handleSubmit}>
@@ -59,17 +63,14 @@ class SignIn extends React.Component {
             label='비밀번호'
             required
           />
-
-          <div className = 'buttons'>          
-            <CustomButton type='submit'> 로그인 </CustomButton>
-            <CustomButton onClick = {signInWithGoogle} isGoogleSignIn>
-            구글 로그인 
+          <ButtonsBarContainer>
+            <CustomButton type='submit'>  로그인 </CustomButton>
+            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+              구글 로그인
             </CustomButton>
-          </div>
-
-
+          </ButtonsBarContainer>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }

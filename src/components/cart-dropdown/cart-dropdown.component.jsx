@@ -3,36 +3,41 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 
-import CustomButton from '../custom-button/custom-button.component'
 import CartItem from '../cart-item/cart-item.component';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { toggleCartHidden } from '../../redux/cart/cart.actions.js';
 
-import './cart-dropdown.styles.scss';
+import {
+    CartDropdownContainer,
+    CartDropdownButton,
+    EmptyMessageContainer,
+    CartItemsContainer
+} from './cart-dropdown.styles';
 
-const CartDropdown = ({ cartItems, history, dispatch}) => (
-
-    <div className = 'cart-dropdown'>
-        <div className = 'cart-items'>
-            {cartItems.length ?
+const CartDropdown = ({ cartItems, history, dispatch }) => (
+    <CartDropdownContainer>
+        <CartItemsContainer>
+            {cartItems.length ? (
                 cartItems.map(cartItem => (
-                <CartItem key = {cartItem.id} item = {cartItem}/>
-            ))
-            :
-            <span className = 'empty-message'>카트가 비어있습니다</span>
-        }
-        </div>
-        <CustomButton onClick = {() => {
-            history.push('/checkout');
-            dispatch(toggleCartHidden());
-        }}>
-          체크아웃
-        </CustomButton>
-    </div>
+                    <CartItem key={cartItem.id} item={cartItem} />
+                ))
+            ) : (
+                    <EmptyMessageContainer>카트가 비어있습니다</EmptyMessageContainer>
+                )}
+        </CartItemsContainer>
+        <CartDropdownButton
+            onClick={() => {
+                history.push('/checkout');
+                dispatch(toggleCartHidden());
+            }}
+        >
+            체크아웃
+          </CartDropdownButton>
+    </CartDropdownContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
-    cartItems : selectCartItems
+    cartItems: selectCartItems
 });
 
 export default withRouter(connect(mapStateToProps)(CartDropdown));
