@@ -34,3 +34,10 @@ export const TotalContainer = styled.div`
   margin-left: auto;
   font-size: 36px;
 `;
+
+export const WarningContainer = styled.div`
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+  color: red;
+`;
