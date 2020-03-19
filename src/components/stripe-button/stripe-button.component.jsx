@@ -2,7 +2,7 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
 const StripeCheckoutButton = ({ price }) => {
-  const priceForStripe = price/10;
+  const priceForStripe = price;
   const publishableKey = 'pk_test_51H1Cs8GKO0mTSNoEuLGC4k5YMWgoIzkfZAVXblFQRmP6HALeFe151l1jQXvzgzeXSrCFokROLleqUbtTtYQf5Xwb00O7qsEsrf';
 
   const onToken = token => {
@@ -17,11 +17,12 @@ const StripeCheckoutButton = ({ price }) => {
       billingAddress
       shippingAddress
       
-      description={`합계: $${price/1000}`}
+      description={`합계: ￦${price}`}
       amount={priceForStripe}
       panelLabel='결제'
       token={onToken}
       stripeKey={publishableKey}
+      currency = 'krw'
     />
   );
 };
