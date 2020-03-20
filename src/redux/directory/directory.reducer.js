@@ -4,31 +4,31 @@ const INITIAL_STATE ={
             title: '의류',
             imageUrl: 'https://mihilthome.files.wordpress.com/2020/02/shirts.png?w=1000&h=',
             id: 1,
-            linkUrl: 'shop/cloth'
+            linkUrl: 'shop/의류'
         },
         {
             title: '전자기기',
             imageUrl: 'https://mihilthome.files.wordpress.com/2020/02/phone.png?w=1000&h=',
             id: 2,
-            linkUrl: 'shop/electronic'
+            linkUrl: 'shop/전자기기'
         },
         {
             title: '책',
             imageUrl: 'https://mihilthome.files.wordpress.com/2020/02/book.png?w=1000&h=',
             id: 3,
-            linkUrl: 'shop/book'
+            linkUrl: 'shop/책'
         },
         {
             title: '식물',
             imageUrl: 'https://mihilthome.files.wordpress.com/2020/02/plant.png?w=1000&h=',
             id: 4,
-            linkUrl: 'shop/plant'
+            linkUrl: 'shop/식물'
         },
         {
             title: '기타',
             imageUrl: 'https://mihilthome.files.wordpress.com/2020/02/ect.png?w=1000&h=',
             id: 5,
-            linkUrl: 'shop/etc'
+            linkUrl: 'shop/기타'
         }
     ]
 };
