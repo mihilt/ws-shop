@@ -22,7 +22,7 @@ const StripeCheckoutButton = ({ price }) => {
       panelLabel='결제'
       token={onToken}
       stripeKey={publishableKey}
-      currency = 'krw'
+      currency = 'KRW'
     />
   );
 };
